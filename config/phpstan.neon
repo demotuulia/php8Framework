@@ -1,0 +1,8 @@
+parameters:
+	level: 3
+	paths:
+		- ../App
+		- ../Tests
+
+includes:
+	- ../phpstan-baseline.neon

@@ -1,0 +1,1 @@
+mysql --defaults-extra-file=/var/www/api_/config/mysq.cnf  test_db_name </var/www/api_/Tests/Scripts/sql/testContent.sql

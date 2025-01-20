@@ -1,0 +1,21 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Call to an undefined method App\\\\Plugins\\\\Db\\\\Connection\\\\IConnection\\:\\:getPassword\\(\\)\\.$#"
+			count: 1
+			path: App/Plugins/Db/Db.php
+
+		-
+			message: "#^Call to an undefined method App\\\\Plugins\\\\Db\\\\Connection\\\\IConnection\\:\\:getUsername\\(\\)\\.$#"
+			count: 1
+			path: App/Plugins/Db/Db.php
+
+		-
+			message: "#^Method App\\\\Plugins\\\\Db\\\\Db\\:\\:getLastInsertedId\\(\\) should return int but returns string\\|false\\.$#"
+			count: 1
+			path: App/Plugins/Db/Db.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Plugins\\\\Di\\\\Injectable\\:\\:\\$di\\.$#"
+			count: 1
+			path: App/Plugins/Di/Injectable.php
