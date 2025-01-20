@@ -59,8 +59,8 @@ Translations
 ## Endpoints
 
 Some example endpoints are documented by Postman on the following link
+[https://www.postman.com/navigation-physicist-32016049/php8matchtools/overview](https://www.postman.com/navigation-physicist-32016049/php8matchtools/overview)
 
-https://www.postman.com/navigation-physicist-32016049/php8matchtools/overview
 
 
 
@@ -71,15 +71,16 @@ Below are explained some of the facilities of the framework.
 ### Configuration
 
 The configuration is located in the file
+
 config/config.php
 
-See config/config_sample.php
+See 
+[config/config_sample.php](https://github.com/demotuulia/php8Framework/blob/main/config/config_sample.php)
 
 The helper HConfig uses it.
 
-```
-App/Helpers/HConfig.php
-```
+
+[App\Helpers](https://github.com/demotuulia/php8Framework/blob/main/App/Helpers/HConfig.php)
 
 Example:
 
@@ -92,7 +93,8 @@ $apiHost = HConfig::getConfig('api_host');
 With this helper you can write log statements. This version writes them to the database.
 This can extended for example to files if needed.
 
-The helper App\Helpers\HLogStatement does this.
+The helper  [App\Helpers\HLogStatement](https://github.com/demotuulia/php8Framework/blob/main/App/Helpers/HLogStatement.php)  
+does this.
 
 To enable the log statements you need to configure the by
 ```setLogStatemnts => true```
@@ -112,11 +114,11 @@ Example:
 
 The following classes and traits are responsible for this:
 
-```
-App/Traits/TRequest.php
-App/Factory/FRequest.php
-App/Services/Request
-```
+
+[App/Traits/TRequest](https://github.com/demotuulia/php8Framework/blob/main/App/Traits/TRequest.php) 
+[App/Factory/FRequest](https://github.com/demotuulia/php8Framework/blob/main/App/Factory/FRequest.php)
+[App/Services/Request](https://github.com/demotuulia/php8Framework/tree/main/App/Services/Request)
+
 
 ### User Management
 
@@ -127,9 +129,9 @@ There are the following facilities
 * Login and logout
 * In case the password is forgotten send hashed login link to email.
 
-The below describes the use of this:
+The test below describes the use of this:
+[AdminUsersControllerTest.php](https://github.com/demotuulia/php8Framework/blob/main/Tests/Integration/AdminUsersControllerTest.php)
 
-Tests/Integration/AdminUsersControllerTest.php
 
 ### Authorization
 
@@ -137,18 +139,16 @@ This framework supports authorization different user roles.
 In the matches tools project we have the  roles 'quest', 'administrator' and 'application administrator'.
 The configuration file
 
-```
-config/authorizations/list.php
-```
+[config/authorizations/list.php](https://github.com/demotuulia/php8Framework/blob/main/config/authorizations/list.php)
+
+
 
 defines the authorizations for the roles 'quest'
 and 'application administrator'.  The role 'Admin' is allowed to do everything.
 
 The function`'pageAllowed'`in the file
 
-```
-App/Traits/TAuthenticate.php
-```
+[TAuthenticate::pageAllowed](https://github.com/demotuulia/php8Framework/blob/10622046af9ccdc45de507442050b2bf4e8c226e/App/Traits/TAuthenticate.php#L37)
 
 checks the authorization
 
@@ -164,12 +164,11 @@ Like:
 * value found in a certain database table
 * range
 
-`App/Traits/TValidate.php`
-
 Se example of the validation and the validation trait:
-`App/Controllers/MatchesProfilesController.php getValidationRules()`
-and
-`App/Traits/TValidate.php`
+[MatchesProfilesController::getValidationRules](https://github.com/demotuulia/php8Framework/blob/10622046af9ccdc45de507442050b2bf4e8c226e/App/Controllers/AdminUsersController.php#L172)
+
+[App/Traits/TValidate](https://github.com/demotuulia/php8Framework/blob/main/App/Traits/TValidate.php)
+
 
 ### Tests
 
@@ -180,6 +179,9 @@ The main focus has been in the integration tests, which make a curl request to t
 
 Examples:
 
+[Unit test for translations](https://github.com/demotuulia/php8Framework/blob/main/Tests/Feature/TRanslationsTest.php) 
+
+[Integration test for Admin Users ](https://github.com/demotuulia/php8Framework/blob/main/Tests/Integration/AdminUsersControllerTest.php)
 
 ### ORM
 
@@ -191,11 +193,10 @@ The model classes define the properties of the table, like to columns and relati
 the other tables.
 The model classes are inherited from the
 
-App/Models/BaseModel.php 
-which uses th helper
-App/Models/Traits/TBaseModelHelpers.php
+[App/Models/BaseModel](https://github.com/demotuulia/php8Framework/blob/main/App/Models/BaseModel.php) 
+which uses the helper and are responsible to build te SQL queries.
+[App/Models/Traits/TBaseModelHelpers](https://github.com/demotuulia/php8Framework/blob/main/App/Models/Traits/TBaseModelHelpers.php) 
 
-and are responsible to build te SQL queries.
 
 The service classes are responsible for the business rules of each table.
 The controllers are calling the functions from the service classes.
@@ -213,10 +214,16 @@ They have one to many relation below.
 ----------------           -------------------
 ```
 
-The related models are found in
+The related models and service classesare found in
 
-App/Models/MatchesUsers.php
-App/Models/MatchesProfile.php
+
+[App/Models/MatchesUsers](https://github.com/demotuulia/php8Framework/blob/main/App/Models/MatchesUsers.php)
+
+[App/Models/MatchesProfile](https://github.com/demotuulia/php8Framework/blob/main/App/Models/MatchesProfile.php) 
+
+[App\Services\AdminUsersService](https://github.com/demotuulia/php8Framework/blob/main/App/Services/AdminUsersService.php)
+
+[App\Services\MatchesUsersService](https://github.com/demotuulia/php8Framework/blob/main/App/Services/MatchesUsersService.php)
 
 Some code examples:
 
@@ -297,14 +304,15 @@ Some code examples:
 
 You can make the application multilingual by the translations
 The service class App\Services\TranslationsService is responsible for this.
-App/Services/TranslationsService.php
+[App\Services\TranslationsService](https://github.com/demotuulia/php8Framework/blob/main/App/Services/TranslationsService.php) 
+
 
 The test below describes the usage of it
-Tests/Feature/TRanslationsTest.php
+[Tests/Feature/TRanslationsTest](https://github.com/demotuulia/php8Framework/blob/main/Tests/Feature/TRanslationsTest.php) 
 
 The translations are configures in the folder Translations
 See example
-translations/nl_NL/errors.php
+[translations/nl_NL/errors.php](https://github.com/demotuulia/php8Framework/blob/main/translations/nl_NL/errors.php)
 
 
 
