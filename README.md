@@ -1,3 +1,5 @@
+
+<img src="/img/php.png" width="262">
 # Match Tools with php8 framework
 
 
@@ -12,7 +14,6 @@
     * [Request content types](#request-section)
     * [User Management](#users-section)
     * [Authorization](#authorization-section)
-    * [Form validator](#form-validator-section)
     * [Form validator](#form-validator-section)
     * [Tests](#test-section)
     * [ORM](#orm-section)
