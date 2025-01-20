@@ -1,5 +1,26 @@
 # Match Tools with php8 framework
 
+
+###  Contents
+
+* [Introduction](#intro-section)
+* [Structure and code](#code-section)
+* [Endpoints](#endpoints-section)
+* [Facilities](#facilities-section)
+    * [Configuration](#configuration-section)
+    * [Log statements](#log-section)
+    * [Request content types](#request-section)
+    * [User Management](#users-section)
+    * [Authorization](#authorization-section)
+    * [Form validator](#form-validator-section)
+    * [Form validator](#form-validator-section)
+    * [Tests](#test-section)
+    * [ORM](#orm-section)
+    * [Translations](#translations-section)
+
+
+
+<a name='intro-section'></a>
 ## Introduction
 
 This an example framework with php8 which is mainly done by my own code.
@@ -15,6 +36,8 @@ This framework has been as a Word Press plugin originally on a php7 server on th
 a light framework, which I can self customize.
 This demo shows some features of the framework and there are only some essential files to show the php8 framework.
 
+
+<a name='code-section'></a>
 ## Structure and code
 
 This framework has the main components and follows the MVC  structure (In stead of HTML view we have json response).
@@ -55,7 +78,7 @@ Translations
     Translation files
 ```
 
-
+<a name='endpoints-section'></a>
 ## Endpoints
 
 Some example endpoints are documented by Postman on the following link
@@ -63,11 +86,11 @@ Some example endpoints are documented by Postman on the following link
 
 
 
-
+<a name='facilities-section'></a>
 ## Facilities
 
 Below are explained some of the facilities of the framework.
-
+<a name='configuration-section'></a>
 ### Configuration
 
 The configuration is located in the file
@@ -87,7 +110,7 @@ Example:
 ```
 $apiHost = HConfig::getConfig('api_host');
 ```
-
+<a name='log-section'></a>
 ### Log statements
 
 With this helper you can write log statements. This version writes them to the database.
@@ -104,7 +127,7 @@ Example:
 ```
    HLogStatement::set('Failed e-mail hash request by the e-mail ' .  $request['email']);
 ```
-
+<a name='request-section'></a>
 ### Request content types
 
 * This API handles automatically the following request content types:
@@ -119,7 +142,7 @@ The following classes and traits are responsible for this:
 [App/Factory/FRequest](https://github.com/demotuulia/php8Framework/blob/main/App/Factory/FRequest.php)
 [App/Services/Request](https://github.com/demotuulia/php8Framework/tree/main/App/Services/Request)
 
-
+<a name='users-section'></a>
 ### User Management
 
 There are the following facilities
@@ -132,7 +155,7 @@ There are the following facilities
 The test below describes the use of this:
 [AdminUsersControllerTest.php](https://github.com/demotuulia/php8Framework/blob/main/Tests/Integration/AdminUsersControllerTest.php)
 
-
+<a name='authorization-section'></a>
 ### Authorization
 
 This framework supports authorization different user roles.
@@ -152,6 +175,7 @@ The function`'pageAllowed'`in the file
 
 checks the authorization
 
+<a name='form-validator-section'></a>
 ### Form validator
 
 In Laravel style you can create standard and customized validation rules per controller and action.
@@ -169,7 +193,7 @@ Se example of the validation and the validation trait:
 
 [App/Traits/TValidate](https://github.com/demotuulia/php8Framework/blob/main/App/Traits/TValidate.php)
 
-
+<a name='test-section'></a>
 ### Tests
 
 There are unit tests and integration tests.
@@ -183,6 +207,7 @@ Examples:
 
 [Integration test for Admin Users ](https://github.com/demotuulia/php8Framework/blob/main/Tests/Integration/AdminUsersControllerTest.php)
 
+<a name='orm-section'></a>
 ### ORM
 
 With this ORM each database table has its own model and service class.
@@ -299,7 +324,7 @@ Some code examples:
 **/
 ```
 
-
+<a name='translations-section'></a>
 ### Translations
 
 You can make the application multilingual by the translations
